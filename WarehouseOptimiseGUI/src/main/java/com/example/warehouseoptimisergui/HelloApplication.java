@@ -19,25 +19,42 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
-    private static Warehouse warehouse1 = new Warehouse(1);
-    private static Warehouse warehouse2 = new Warehouse(2);
-    private static Warehouse warehouse3 = new Warehouse(3);
-    private static Warehouse warehouse4 = new Warehouse(4);
-    private static Warehouse warehouse5 = new Warehouse(5);
-    private static ContainerList containers = new ContainerList();
+    private static final Warehouse warehouse1 = new Warehouse(1);
+    private static final Warehouse warehouse2 = new Warehouse(2);
+    private static final Warehouse warehouse3 = new Warehouse(3);
+    private static final Warehouse warehouse4 = new Warehouse(4);
+    private static final Warehouse warehouse5 = new Warehouse(5);
+    private static final ContainerList containers = new ContainerList();
 
     public static void main(String[] args) {
-        containers.add(new Container("A123", 1));
-        containers.add(new Container("babylove", 1));
-        list();
+        containers.add(new Container("v1", 1, "8-8-2020 00:00", Task.LOAD), warehouse1);
+        containers.add(new Container("v2", 1, "8-8-2020 00:00", Task.LOAD), warehouse1);
+        containers.add(new Container("v3", 1, "8-8-2020 00:00", Task.LOAD), warehouse1);
+        containers.add(new Container("v4", 1, "8-8-2020 00:00", Task.LOAD), warehouse1);
+        containers.add(new Container("v5", 1, "8-8-2020 00:00", Task.LOAD), warehouse1);
+        containers.add(new Container("v6", 1, "8-8-2020 00:00", Task.LOAD), warehouse1);
+        containers.add(new Container("v7", 1, "8-8-2020 00:00", Task.LOAD), warehouse1);
+        containers.add(new Container("v8", 1, "8-8-2020 00:00", Task.LOAD), warehouse1);
+
+        containers.addBookingTime("v1", "8-8-2020 23:00", "8-8-2020 23:50");
+        containers.addBookingTime("v2", "8-8-2020 21:00", "8-8-2020 22:00");
+        containers.addBookingTime("v3", "8-8-2020 00:00", "8-8-2020 19:00");
+        containers.addBookingTime("v4", "8-8-2020 13:00", "8-8-2020 18:00");
+        containers.addBookingTime("v5", "8-8-2020 12:00", "8-8-2020 14:00");
+        containers.addBookingTime("v6", "8-8-2020 16:00", "8-8-2020 18:00");
+        containers.addBookingTime("v7", "8-8-2020 00:00", "8-8-2020 10:00");
+        containers.addBookingTime("v8", "8-8-2020 15:00", "8-8-2020 17:00");
+
+        warehouse1.sortLoadingsByStartTime();
+//        System.out.println(warehouse1.getLoadings());
+//        list();
     }
 
     public static void list() {
-        HashMap<Container, Integer> containerList = containers.getContainers();
-        for (Map.Entry<Container, Integer> container : containerList.entrySet()) {
-            Integer warehouseIndex = container.getValue();
-
-            System.out.println(container.getKey() + warehouseIndex.toString());
+        HashMap<Container, Warehouse> containerList = containers.getContainers();
+        for (Map.Entry<Container, Warehouse> container : containerList.entrySet()) {
+            Warehouse warehouse = container.getValue();
+            System.out.println(container.getKey().toString() + warehouse.getIndex());
         }
     }
 }
