@@ -1,11 +1,12 @@
 package com.example.warehouseoptimisegui;
 
-import java.util.ArrayList;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class LoadingList {
-    private static ArrayList<Loading> loadings;
+    private static SortedMap<Loading, Integer> loadings;
 
     public LoadingList() {
-        loadings = new ArrayList<>();
+        loadings = new TreeMap<Loading, Integer>();
     }
 }
