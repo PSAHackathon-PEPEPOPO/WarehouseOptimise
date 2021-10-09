@@ -1,4 +1,4 @@
-package com.example.warehouseoptimisegui;
+package com.example.warehouseoptimisergui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

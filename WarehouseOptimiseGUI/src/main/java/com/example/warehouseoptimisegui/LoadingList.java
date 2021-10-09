@@ -1,4 +1,4 @@
-package com.example.warehouseoptimisegui;
+package com.example.warehouseoptimisergui;
 
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -8,5 +8,9 @@ public class LoadingList {
 
     public LoadingList() {
         loadings = new TreeMap<Loading, Integer>();
+    }
+
+    public void add(Loading loading, int warehouseIndex) {
+        loadings.put(loading, warehouseIndex);
     }
 }
