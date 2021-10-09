@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HelloApplication extends Application {
     @Override
@@ -17,9 +19,25 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
+    private static Warehouse warehouse1 = new Warehouse(1);
+    private static Warehouse warehouse2 = new Warehouse(2);
+    private static Warehouse warehouse3 = new Warehouse(3);
+    private static Warehouse warehouse4 = new Warehouse(4);
+    private static Warehouse warehouse5 = new Warehouse(5);
+    private static ContainerList containers = new ContainerList();
+
     public static void main(String[] args) {
-        ContainerList containers = new ContainerList();
-        Warehouse warehouse1 = new Warehouse(1, containers);
-        System.out.println(warehouse1);
+        containers.add(new Container("A123", 1));
+        containers.add(new Container("babylove", 1));
+        list();
+    }
+
+    public static void list() {
+        HashMap<Container, Integer> containerList = containers.getContainers();
+        for (Map.Entry<Container, Integer> container : containerList.entrySet()) {
+            Integer warehouseIndex = container.getValue();
+
+            System.out.println(container.getKey() + warehouseIndex.toString());
+        }
     }
 }
