@@ -1,4 +1,4 @@
-package com.example.warehouseoptimisegui;
+package com.example.warehouseoptimisergui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +18,8 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        ContainerList containers = new ContainerList();
+        Warehouse warehouse1 = new Warehouse(1, containers);
+        System.out.println(warehouse1);
     }
 }

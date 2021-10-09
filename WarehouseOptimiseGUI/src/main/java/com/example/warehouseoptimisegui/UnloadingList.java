@@ -1,4 +1,4 @@
-package com.example.warehouseoptimisegui;
+package com.example.warehouseoptimisergui;
 
 import java.util.SortedMap;
 import java.util.TreeMap;

@@ -1,5 +1,5 @@
-package com.example.warehouseoptimisegui;
+package com.example.warehouseoptimisergui;
 
 public class Unloading {
-    private static Status status;
+    private static Status status = Status.AVAIL;
 }

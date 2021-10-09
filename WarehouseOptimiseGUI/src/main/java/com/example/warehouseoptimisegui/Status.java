@@ -1,4 +1,4 @@
-package com.example.warehouseoptimisegui;
+package com.example.warehouseoptimisergui;
 
 public enum Status {
     AVAIL,
