@@ -16,9 +16,7 @@ public class ContainerList {
         return containers;
     }
 
-    public void addBookingTime(String containerSerial, String rawStartTime, String rawEndTime) {
-        LocalDateTime startTime = parser.convertDateTime(rawStartTime);
-        LocalDateTime endTime = parser.convertDateTime(rawEndTime);
+    public void addBookingTime(String containerSerial, LocalDateTime startTime, LocalDateTime endTime) {
         for (Map.Entry<Container, Warehouse> container : containers.entrySet()) {
             if (containerSerial.equals(container.getKey().getContainerSerial())) {
                 Container curr = container.getKey();

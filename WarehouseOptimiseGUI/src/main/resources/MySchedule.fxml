@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import com.gluonhq.charm.glisten.control.TextField?>-->
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.warehouseoptimisergui.AddController">
+   <children>
+      <Label layoutX="439.0" layoutY="38.0" prefHeight="10.0" prefWidth="122.0" text="My Schedule">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="homeButton" layoutX="45.0" layoutY="497.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="46.0" prefWidth="101.0" text="Home" />
+      <Button fx:id="bookingsButton" layoutX="178.0" layoutY="497.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="46.0" prefWidth="102.0" text="Bookings" />
+      <Button fx:id="addContainer" layoutX="425.0" layoutY="470.0" mnemonicParsing="false" onAction="#initDatabase" prefHeight="54.0" prefWidth="153.0" text="Add container" />
+      <Label layoutX="343.0" layoutY="285.0" prefHeight="30.0" prefWidth="102.0" text="Container Serial" />
+      <Label layoutX="343.0" layoutY="330.0" prefHeight="30.0" prefWidth="102.0" text="Warehouse " />
+      <Label layoutX="343.0" layoutY="379.0" prefHeight="30.0" prefWidth="116.0" text="Loading/Unloading" />
+      <DatePicker fx:id="datepicker" layoutX="445.0" layoutY="143.0" prefHeight="30.0" prefWidth="208.0" />
+      <Label layoutX="280.0" layoutY="143.0" prefHeight="30.0" prefWidth="133.0" text="Date of Load/Unload" />
+   </children>
+</AnchorPane>

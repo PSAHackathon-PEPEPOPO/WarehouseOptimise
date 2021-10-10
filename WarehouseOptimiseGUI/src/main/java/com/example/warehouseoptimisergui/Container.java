@@ -6,7 +6,6 @@ import java.util.Comparator;
 public class Container {
     private int warehouseIndex;
     private String containerSerial;
-    private Status status = Status.AVAIL;
     private LocalDateTime date;
     private Task task;
     private LocalDateTime bookingStartTime;
@@ -14,11 +13,14 @@ public class Container {
 
     private Parser parser = new Parser();
 
-    public Container(String containerSerial, int warehouseIndex, String rawDate, Task task) {
+    public Container(String containerSerial, int warehouseIndex, LocalDateTime date, Task task) {
         this.warehouseIndex = warehouseIndex;
         this.containerSerial = containerSerial;
-        date = parser.convertDateTime(rawDate);
+        this.date = date;
         this.task = task;
+        bookingStartTime = LocalDateTime.now();
+        bookingEndTime = LocalDateTime.now();
+
     }
 
     public void addBookingTime(LocalDateTime bookingStartTime, LocalDateTime bookingEndTime) {
@@ -54,21 +56,19 @@ public class Container {
         }
     };
 
-    public static Comparator<Container> SlotTimeComparator = new Comparator<Container>() {
-        public int compare(Container c1, Container c2) {
-            LocalDateTime c1EndTime = c1.getBookingEndTime();
-            LocalDateTime c2StartTime = c2.getBookingStartTime();
-            return c1EndTime.compareTo(c2StartTime);
-        }
-    };
-
     @Override
     public String toString() {
         return "Container{" +
                 "containerSerial='" + containerSerial + '\'' +
-                ", status=" + status + '\'' +
+                "Task=" + task + '\'' +
                 ", bookingStartTime=" + bookingStartTime.toString() + '\'' +
                 ", bookingEndTime=" + bookingEndTime.toString() +
                 '}';
+    }
+
+    public String toInfoString() {
+        return "ContainerSerial: " + containerSerial + " ," +
+                "Warehouse: " + warehouseIndex + "," +
+                "Task: " + task;
     }
 }

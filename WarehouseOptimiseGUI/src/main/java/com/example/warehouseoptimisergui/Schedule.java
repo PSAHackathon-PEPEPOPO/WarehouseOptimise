@@ -33,8 +33,8 @@ public class Schedule {
     private String list() {
         StringBuilder listedBookings = new StringBuilder();
         for (Container booking : bookings) {
-            listedBookings.append(booking.getBookingStartTime());
-            listedBookings.append(booking.getBookingEndTime() + "\n");
+            listedBookings.append(booking.getBookingStartTime().toString());
+            listedBookings.append(booking.getBookingEndTime().toString() + "\n");
         }
         return listedBookings.toString();
     }
