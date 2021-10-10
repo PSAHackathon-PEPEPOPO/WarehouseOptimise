@@ -10,11 +10,16 @@ public class Parser {
 
     }
 
-    LocalDateTime convertDateTime(String rawDateTime) throws DateTimeParseException {
+    static LocalDateTime convertDateTime(String rawDateTime) throws DateTimeParseException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-M-yyyy HH:mm");
         return LocalDateTime.parse(rawDateTime, formatter);
     }
 
-
-
+    public static LocalDateTime getHour(String hourString, LocalDateTime dayTime) {
+        String[] splitStringByRegex = hourString.split(":", 2);
+        String hour = splitStringByRegex[0];
+        int hourInt = Integer.parseInt(hour);
+        LocalDateTime updatedDateTime = dayTime.withHour(hourInt);
+        return updatedDateTime;
+    }
 }

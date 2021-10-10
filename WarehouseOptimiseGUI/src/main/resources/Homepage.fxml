@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.warehouseoptimisergui.SceneController">
+    <children>
+        <Button fx:id="bookingButton" layoutX="90.0" layoutY="211.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="82.0" prefWidth="166.0" text="Booking" />
+      <Button fx:id="myScheduleButton" layoutX="327.0" layoutY="211.0" mnemonicParsing="false" onAction="#switchToScene3" prefHeight="82.0" prefWidth="166.0" text="My Schedule" />
+    </children>
+</AnchorPane>
